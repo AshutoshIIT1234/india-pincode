@@ -1,6 +1,6 @@
 {
   "name": "bharat-pincode",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Offline-first Indian pincode lookup — city, state, district, nearby, distance & more. Zero dependencies.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
