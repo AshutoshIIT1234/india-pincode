@@ -1,9 +1,9 @@
-# india-pincode
+# bharat-pincode
 
 > 🇮🇳 Offline-first Indian pincode lookup — city, state, district, nearby search, distance calculation & more. **Zero dependencies. TypeScript-first.**
 
-[![npm version](https://img.shields.io/npm/v/india-pincode.svg)](https://npmjs.com/package/india-pincode)
-[![npm downloads](https://img.shields.io/npm/dm/india-pincode.svg)](https://npmjs.com/package/india-pincode)
+[![npm version](https://img.shields.io/npm/v/bharat-pincode.svg)](https://npmjs.com/package/bharat-pincode)
+[![npm downloads](https://img.shields.io/npm/dm/bharat-pincode.svg)](https://npmjs.com/package/bharat-pincode)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-ready-blue.svg)](https://www.typescriptlang.org/)
 
@@ -25,11 +25,11 @@
 ## 📦 Install
 
 ```bash
-npm install india-pincode
+npm install bharat-pincode
 # or
-pnpm add india-pincode
+pnpm add bharat-pincode
 # or
-yarn add india-pincode
+yarn add bharat-pincode
 ```
 
 ---
@@ -37,7 +37,7 @@ yarn add india-pincode
 ## 🚀 Quick Start
 
 ```ts
-import pincode from "india-pincode";
+import pincode from "bharat-pincode";
 
 // Single lookup
 const result = pincode.lookup("400001");
@@ -61,7 +61,7 @@ pincode.distanceBetween("400001", "560001"); // → 981.4 (km)
 Lookup a single pincode. Returns `null` if not found.
 
 ```ts
-import { lookup } from "india-pincode";
+import { lookup } from "bharat-pincode";
 
 lookup("800001");
 // → { pincode: "800001", city: "Patna", state: "Bihar", ... }
@@ -151,7 +151,6 @@ nearby("400001", { radiusKm: 15, limit: 5 });
 // → up to 5 pincodes within 15 km of Mumbai GPO
 ```
 
-Options:
 | Option | Default | Description |
 |--------|---------|-------------|
 | `radiusKm` | `20` | Search radius in km |
@@ -175,7 +174,6 @@ Fuzzy search across pincode, city, district, state.
 ```ts
 search("bhopal");  // → Bhopal pincodes
 search("110");     // → all pincodes starting with 110
-search("south");   // → matches states/cities with "south"
 ```
 
 ---
@@ -212,7 +210,7 @@ export interface PincodeResult {
 
 ### Address form auto-fill
 ```ts
-const handlePincodeChange = async (pin: string) => {
+const handlePincodeChange = (pin: string) => {
   if (pin.length === 6) {
     const result = lookup(pin);
     if (result) {
@@ -230,7 +228,7 @@ const warehousePincode = "400001"; // Mumbai warehouse
 
 const isDeliverable = (customerPin: string): boolean => {
   const dist = distanceBetween(warehousePincode, customerPin);
-  return dist !== null && dist <= 500; // 500 km delivery radius
+  return dist !== null && dist <= 500;
 };
 ```
 
@@ -250,8 +248,6 @@ const nearest = (userPin: string) => {
 
 ## 🗃️ Dataset Coverage
 
-Covers all 28 states + 8 UTs including major cities and districts:
-
 | Region | States Covered |
 |--------|---------------|
 | North | Delhi, UP, Rajasthan, Punjab, Haryana, HP, Uttarakhand, J&K |
@@ -260,7 +256,7 @@ Covers all 28 states + 8 UTs including major cities and districts:
 | West | Maharashtra, Gujarat, Goa |
 | Central | Madhya Pradesh, Chhattisgarh |
 
-> 📝 Want your city added? [Open an issue](https://github.com/AshutoshIITP1234/india-pincode/issues) or submit a PR!
+> 📝 Want your city added? [Open an issue](https://github.com/AshutoshIITP1234/bharat-pincode/issues) or submit a PR!
 
 ---
 
@@ -268,12 +264,11 @@ Covers all 28 states + 8 UTs including major cities and districts:
 
 PRs welcome! Especially for:
 - Adding more pincodes (submit a JSON patch)
-- Adding `type: "BO"` (Branch Office) entries
 - Improving coordinate accuracy
 
 ```bash
-git clone https://github.com/AshutoshIITP1234/india-pincode
-cd india-pincode
+git clone https://github.com/AshutoshIITP1234/bharat-pincode
+cd bharat-pincode
 npm install
 npm run dev
 ```

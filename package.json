@@ -1,5 +1,5 @@
 {
-  "name": "india-pincode",
+  "name": "bharat-pincode",
   "version": "1.0.1",
   "description": "Offline-first Indian pincode lookup — city, state, district, nearby, distance & more. Zero dependencies.",
   "main": "./dist/index.js",
@@ -56,5 +56,9 @@
   "engines": {
     "node": ">=16"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "dependencies": {
+    "bharat-pincode": "^1.0.1",
+    "india-pincode": "^2.5.9"
+  }
 }
