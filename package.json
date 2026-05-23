@@ -1,0 +1,60 @@
+{
+  "name": "india-pincode",
+  "version": "1.0.0",
+  "description": "Offline-first Indian pincode lookup — city, state, district, nearby, distance & more. Zero dependencies.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "data/pincodes.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "india",
+    "pincode",
+    "postal-code",
+    "zip-code",
+    "city",
+    "state",
+    "district",
+    "geolocation",
+    "indian-cities",
+    "offline",
+    "address",
+    "lookup"
+  ],
+  "author": "Ashutosh Kumar Tripathi <ashutosh_2312res192@iitp.ac.in>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshutoshIITP1234/india-pincode"
+  },
+  "homepage": "https://github.com/AshutoshIITP1234/india-pincode#readme",
+  "bugs": {
+    "url": "https://github.com/AshutoshIITP1234/india-pincode/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.41",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "sideEffects": false
+}
